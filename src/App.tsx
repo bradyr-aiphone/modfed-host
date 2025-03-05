@@ -1,20 +1,36 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import { NextIx } from "./NextIx";
-import { lazy, Suspense } from "react";
-
-const AcpApp = lazy(() => import("acp/App"));
+import { Acp } from "./Acp";
 
 const router = createBrowserRouter([
   {
-    path: "/acp",
+    path: "/",
     element: (
-      <Suspense fallback={<div>loading</div>}>
-        <AcpApp />
-      </Suspense>
+      <div
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <p>
+          <Link to="/next-acp">View ACP App</Link>
+        </p>
+        <p>
+          <Link to="/next-ix">View React Ts Vite App</Link>
+        </p>
+      </div>
     ),
   },
   {
-    path: "/",
+    path: "/next-acp/*",
+    element: <Acp />,
+  },
+  {
+    path: "/next-ix/*",
     element: <NextIx />,
   },
 ]);

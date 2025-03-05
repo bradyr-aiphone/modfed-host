@@ -4,7 +4,7 @@ import "./index.css";
 import "./App.css";
 import App from "./App.tsx";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("mfe-root")!).render(
   <StrictMode>
     <App />
   </StrictMode>

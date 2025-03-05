@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
-import deps from "./package.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,13 +19,13 @@ export default defineConfig({
       },
       shared: {
         react: {
-          requiredVersion: deps.dependencies.react,
+          requiredVersion: "18.3.1",
         },
         "react-dom": {
-          requiredVersion: deps.dependencies["react-dom"],
+          requiredVersion: "18.3.1",
         },
         "react-router-dom": {
-          requiredVersion: deps.dependencies["react-router-dom"],
+          requiredVersion: "6.3.0",
         },
       },
     }),
